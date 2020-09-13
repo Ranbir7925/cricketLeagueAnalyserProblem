@@ -56,11 +56,33 @@ public class CricketLeagueAnalyser {
         return new Gson().toJson(leagueDAOList);
     }
 
-    private static <E> List<E> sortingInDescendingOrder(Comparator<E> iplComparator, List<E> iplList) {
+    public String getGreatAverageWithBestStrikingRateWiseSortedIPLData() throws CricketLeagueAnalyserException {
+        if (leagueMap  == null || leagueMap .size() == 0) {
+            throw new CricketLeagueAnalyserException("No Census Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
+        }
+        Comparator<LeagueDAO> averageComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.average);
+        Comparator<LeagueDAO> strikingRateComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.strikeRate);
+        List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
+        leagueDAOList = sortingInDescendingOrder(strikingRateComparator.thenComparing(averageComparator), leagueDAOList);
+        return new Gson().toJson(leagueDAOList);
+    }
+
+    public String getMaximumRunsWithBestAverageWiseSortedIPLData() throws CricketLeagueAnalyserException {
+        if (leagueMap  == null || leagueMap .size() == 0) {
+            throw new CricketLeagueAnalyserException("No Census Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
+        }
+        Comparator<LeagueDAO> averageComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.average);
+        Comparator<LeagueDAO> runsComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.runs);
+        List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
+        leagueDAOList = sortingInDescendingOrder(runsComparator.thenComparing(averageComparator), leagueDAOList);
+        return new Gson().toJson(leagueDAOList);
+    }
+
+    private static List<LeagueDAO> sortingInDescendingOrder(Comparator<LeagueDAO> iplComparator, List<LeagueDAO> iplList) {
         for (int i = 0; i < iplList.size()-1; i++) {
             for (int j =0; j< iplList.size() -i -1; j++) {
-                E cricketer1 = iplList.get(j);
-                E cricketer2 = iplList.get(j+1);
+                LeagueDAO cricketer1 = iplList.get(j);
+                LeagueDAO cricketer2 = iplList.get(j+1);
                 if (iplComparator.compare(cricketer1, cricketer2) < 0){
                     iplList.set(j, cricketer2);
                     iplList.set(j+1, cricketer1);
