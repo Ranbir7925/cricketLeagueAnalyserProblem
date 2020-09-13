@@ -2,7 +2,8 @@ public class CricketLeagueAnalyserException extends Exception {
     enum ExceptionType {
         CENSUS_FILE_PROBLEM,
         INVALID_FILE_TYPE_OR_DELIMITER_OR_HEADER,
-        NOT_A_VALID_CRICKETER_SKILL
+        NOT_A_VALID_CRICKETER_SKILL,
+        NO_CRICKET_DATA;
     }
 
     ExceptionType type;
