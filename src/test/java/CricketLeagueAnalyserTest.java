@@ -12,8 +12,9 @@ public class CricketLeagueAnalyserTest {
         try {
             CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
             int numberOfRecords = cricketLeagueAnalyser.loadLeagueData(CricketLeagueAnalyser.CricketerSkill.BATTING, IPL_MOST_RUN_CSV_FILE_PATH);
-            Assert.assertEquals(100,numberOfRecords);
-        } catch (CricketLeagueAnalyserException e) { }
+            Assert.assertEquals(100, numberOfRecords);
+        } catch (CricketLeagueAnalyserException e) {
+        }
     }
 
     //Test case to check number of record in IPL most wickets CSV file
@@ -22,8 +23,9 @@ public class CricketLeagueAnalyserTest {
         try {
             CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
             int numOfRecords = cricketLeagueAnalyser.loadLeagueData(CricketLeagueAnalyser.CricketerSkill.BOWLING, IPL_MOST_WICKETS_CSV_FILE_PATH);
-            Assert.assertEquals(99,numOfRecords);
-        } catch (CricketLeagueAnalyserException e) { }
+            Assert.assertEquals(99, numOfRecords);
+        } catch (CricketLeagueAnalyserException e) {
+        }
     }
 
     // Test case for finding the Batting average in descending order
@@ -33,9 +35,10 @@ public class CricketLeagueAnalyserTest {
             CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
             cricketLeagueAnalyser.loadLeagueData(CricketLeagueAnalyser.CricketerSkill.BATTING, IPL_MOST_RUN_CSV_FILE_PATH);
             String sortedIPLData = cricketLeagueAnalyser.getBattingAverageWiseSortedIPLData();
-            IPLMostRunsCSV[] iplCSV =  new Gson().fromJson(sortedIPLData, IPLMostRunsCSV[].class);
+            IPLMostRunsCSV[] iplCSV = new Gson().fromJson(sortedIPLData, IPLMostRunsCSV[].class);
             Assert.assertEquals("MS Dhoni", iplCSV[0].player);
-        } catch (CricketLeagueAnalyserException e ) { }
+        } catch (CricketLeagueAnalyserException e) {
+        }
     }
 
     // Test case for finding the Strike Rate in descending order
@@ -45,9 +48,10 @@ public class CricketLeagueAnalyserTest {
             CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
             cricketLeagueAnalyser.loadLeagueData(CricketLeagueAnalyser.CricketerSkill.BATTING, IPL_MOST_RUN_CSV_FILE_PATH);
             String sortedIPLData = cricketLeagueAnalyser.getStrikeRateWiseSortedIPLData();
-            IPLMostRunsCSV[] iplCSV =  new Gson().fromJson(sortedIPLData, IPLMostRunsCSV[].class);
+            IPLMostRunsCSV[] iplCSV = new Gson().fromJson(sortedIPLData, IPLMostRunsCSV[].class);
             Assert.assertEquals("Ishant Sharma", iplCSV[0].player);
-        } catch (CricketLeagueAnalyserException e ) { }
+        } catch (CricketLeagueAnalyserException e) {
+        }
     }
 
     // Test case for finding the maximum sixes and fours in descending order
@@ -57,9 +61,10 @@ public class CricketLeagueAnalyserTest {
             CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
             cricketLeagueAnalyser.loadLeagueData(CricketLeagueAnalyser.CricketerSkill.BATTING, IPL_MOST_RUN_CSV_FILE_PATH);
             String sortedIPLData = cricketLeagueAnalyser.getMaximumSixesAndFoursWiseSortedIPLData();
-            IPLMostRunsCSV[] iplCSV =  new Gson().fromJson(sortedIPLData, IPLMostRunsCSV[].class);
+            IPLMostRunsCSV[] iplCSV = new Gson().fromJson(sortedIPLData, IPLMostRunsCSV[].class);
             Assert.assertEquals("Andre Russell", iplCSV[0].player);
-        } catch (CricketLeagueAnalyserException e ) { }
+        } catch (CricketLeagueAnalyserException e) {
+        }
     }
 
     // Test case for finding the maximum sixes and fours with top striking rate in descending order
@@ -69,9 +74,9 @@ public class CricketLeagueAnalyserTest {
             CricketLeagueAnalyser cricketLeagueAnalyser = new CricketLeagueAnalyser();
             cricketLeagueAnalyser.loadLeagueData(CricketLeagueAnalyser.CricketerSkill.BATTING, IPL_MOST_RUN_CSV_FILE_PATH);
             String sortedIPLData = cricketLeagueAnalyser.getMaximumSixesAndFoursWithBestStrikingRateWiseSortedIPLData();
-            IPLMostRunsCSV[] iplCSV =  new Gson().fromJson(sortedIPLData, IPLMostRunsCSV[].class);
+            IPLMostRunsCSV[] iplCSV = new Gson().fromJson(sortedIPLData, IPLMostRunsCSV[].class);
             Assert.assertEquals("Andre Russell", iplCSV[0].player);
-        } catch (CricketLeagueAnalyserException e ) { }
+        } catch (CricketLeagueAnalyserException e) {
+        }
     }
-
 }
