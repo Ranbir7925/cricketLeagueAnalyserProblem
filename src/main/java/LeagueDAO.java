@@ -15,6 +15,7 @@ public class LeagueDAO {
     public int sixes;
     public double overs;
     public int wickets;
+    public double bowlingAverage;
     public int bbi;
     public double economy;
     public double sr;
@@ -47,7 +48,7 @@ public class LeagueDAO {
         runs = iplMostWicketsCSV.runs;
         wickets = iplMostWicketsCSV.wickets;
         bbi = iplMostWicketsCSV.bbi;
-        average = iplMostWicketsCSV.average;
+        bowlingAverage = iplMostWicketsCSV.bowlingAverage;
         economy = iplMostWicketsCSV.economy;
         sr = iplMostWicketsCSV.sr;
         fourWickets = iplMostWicketsCSV.fourWickets;

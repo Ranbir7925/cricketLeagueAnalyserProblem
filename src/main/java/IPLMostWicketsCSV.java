@@ -27,7 +27,7 @@ public class IPLMostWicketsCSV {
     public int bbi;
 
     @CsvBindByName(column = "Avg", required = true)
-    public double average;
+    public double bowlingAverage;
 
     @CsvBindByName(column = "Econ", required = true)
     public double economy;
@@ -52,7 +52,7 @@ public class IPLMostWicketsCSV {
                 ", runs=" + runs +
                 ", wickets=" + wickets +
                 ", bbi=" + bbi +
-                ", average=" + average +
+                ", bowlingAverage=" + bowlingAverage +
                 ", economy=" + economy +
                 ", SR=" + sr +
                 ", fourWickets=" + fourWickets +
