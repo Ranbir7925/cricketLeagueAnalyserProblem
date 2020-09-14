@@ -15,9 +15,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getBattingAverageWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> iplComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.battingAverage);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
         leagueDAOList = sortingInDescendingOrder(iplComparator, leagueDAOList);
@@ -25,9 +22,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getStrikeRateWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> iplComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.battingStrikeRate);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
         leagueDAOList = sortingInDescendingOrder(iplComparator, leagueDAOList);
@@ -35,9 +29,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getMaximumSixesAndFoursWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> iplComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.sixes * 6 + iplFactSheet.fours * 4);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
         leagueDAOList = sortingInDescendingOrder(iplComparator, leagueDAOList);
@@ -45,9 +36,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getMaximumSixesAndFoursWithBestStrikingRateWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> sixesAndFoursComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.sixes * 6 + iplFactSheet.fours * 4);
         Comparator<LeagueDAO> strikingRateComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.battingStrikeRate);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
@@ -56,9 +44,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getGreatAverageWithBestStrikingRateWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> averageComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.battingAverage);
         Comparator<LeagueDAO> strikingRateComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.battingStrikeRate);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
@@ -67,9 +52,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getMaximumRunsWithBestAverageWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> averageComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.battingAverage);
         Comparator<LeagueDAO> runsComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.runs);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
@@ -78,9 +60,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getBowlingAverageWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap  == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> iplComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.bowlingAverage);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
         leagueDAOList = sortingInDescendingOrder(iplComparator, leagueDAOList);
@@ -88,9 +67,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getBowlerEconomyRateWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> iplComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.economyRate);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
         leagueDAOList = sortingInDescendingOrder(iplComparator, leagueDAOList);
@@ -98,9 +74,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getBowlerStrikingRateWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> iplComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.bowlingStrikeRate);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
         leagueDAOList = sortingInDescendingOrder(iplComparator, leagueDAOList);
@@ -108,9 +81,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getFourWicketsAndFiveWicketsWithBestStrikingRateWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> fourAndFiveWicketsComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.fourWicket + iplFactSheet.fiveWicket);
         Comparator<LeagueDAO> strikingRateComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.bowlingStrikeRate);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
@@ -119,9 +89,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getBowlersHavingGreatAverageWithBestStrikingRateWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> averageComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.bowlingAverage);
         Comparator<LeagueDAO> strikingRateComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.bowlingStrikeRate);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
@@ -130,9 +97,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getBestBowlerAndBestBatterWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> battingAverageComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.battingAverage);
         Comparator<LeagueDAO> bowlingAverageComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.bowlingAverage);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
@@ -141,9 +105,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getBowlersTakingMaximumWicketsWithBestBowlingAverageWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> wicketsComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.wicket);
         Comparator<LeagueDAO> averageComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.bowlingAverage);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
@@ -152,9 +113,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getAllRounderWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> wicketsComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.wicket);
         Comparator<LeagueDAO> runsComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.runs);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
@@ -163,9 +121,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getMaximumHundredAndBattingAverageWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> centuryComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.hundred);
         Comparator<LeagueDAO> averageComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.battingAverage);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
@@ -174,9 +129,6 @@ public class CricketLeagueAnalyser {
     }
 
     public String getMinimumHundredAndMinimumFiftyWithBestBattingAverageWiseSortedIPLData() throws CricketLeagueAnalyserException {
-        if (leagueMap == null || leagueMap .size() == 0) {
-            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
-        }
         Comparator<LeagueDAO> minimumHalfCenturyAndCenturyComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.hundred * 100 + iplFactSheet.fifty * 50 == 0);
         Comparator<LeagueDAO> averageComparator = Comparator.comparing(iplFactSheet -> iplFactSheet.battingAverage);
         List<LeagueDAO> leagueDAOList = leagueMap.values().stream().collect(Collectors.toList());
@@ -184,7 +136,10 @@ public class CricketLeagueAnalyser {
         return new Gson().toJson(leagueDAOList);
     }
 
-    private static List<LeagueDAO> sortingInDescendingOrder(Comparator<LeagueDAO> iplComparator, List<LeagueDAO> iplList) {
+    private static List<LeagueDAO> sortingInDescendingOrder(Comparator<LeagueDAO> iplComparator, List<LeagueDAO> iplList) throws CricketLeagueAnalyserException {
+        if (iplList == null || iplList .size() == 0) {
+            throw new CricketLeagueAnalyserException("No Cricket Data", CricketLeagueAnalyserException.ExceptionType.NO_CRICKET_DATA);
+        }
         for (int i = 0; i < iplList.size()-1; i++) {
             for (int j =0; j< iplList.size() -i -1; j++) {
                 LeagueDAO cricketer1 = iplList.get(j);
