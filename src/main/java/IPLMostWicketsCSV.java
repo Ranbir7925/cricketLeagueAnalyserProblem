@@ -1,62 +1,38 @@
 import com.opencsv.bean.CsvBindByName;
 
-public class IPLMostWicketsCSV {
-
-    @CsvBindByName(column = "POS", required = true)
-    public int pos;
+public class IPLMostWicketsCSV{
 
     @CsvBindByName(column = "PLAYER", required = true)
     public String player;
 
-    @CsvBindByName(column = "Mat", required = true)
-    public int matches;
-
-    @CsvBindByName(column = "Inns", required = true)
-    public int innings;
-
-    @CsvBindByName(column = "Ov", required = true)
-    public double overs;
-
-    @CsvBindByName(column = "Runs", required = true)
-    public int runs;
-
-    @CsvBindByName(column = "Wkts", required = true)
-    public int wickets;
-
-    @CsvBindByName(column = "BBI", required = true)
-    public int bbi;
-
     @CsvBindByName(column = "Avg", required = true)
     public double bowlingAverage;
 
-    @CsvBindByName(column = "Econ", required = true)
-    public double economy;
-
     @CsvBindByName(column = "SR", required = true)
-    public double sr;
+    public double strikeRate;
+
+    @CsvBindByName(column = "Econ", required = true)
+    public double economyRate;
 
     @CsvBindByName(column = "4w", required = true)
-    public int fourWickets;
+    public int fourWicket;
 
     @CsvBindByName(column = "5w", required = true)
-    public int fiveWickets;
+    public int fiveWicket;
+
+    @CsvBindByName(column = "Wkts", required = true)
+    public int wicket;
 
     @Override
     public String toString() {
         return "IPLMostWicketsCSV{" +
-                "pos=" + pos +
-                ", player='" + player + '\'' +
-                ", matches=" + matches +
-                ", innings=" + innings +
-                ", overs=" + overs +
-                ", runs=" + runs +
-                ", wickets=" + wickets +
-                ", bbi=" + bbi +
+                "player='" + player + '\'' +
                 ", bowlingAverage=" + bowlingAverage +
-                ", economy=" + economy +
-                ", SR=" + sr +
-                ", fourWickets=" + fourWickets +
-                ", fiveWickets=" + fiveWickets +
+                ", strikeRate=" + strikeRate +
+                ", economyRate=" + economyRate +
+                ", fourWicket=" + fourWicket +
+                ", fiveWicket=" + fiveWicket +
+                ", wicket=" + wicket +
                 '}';
     }
 }
